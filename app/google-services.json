@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "791255479979",
+    "firebase_url": "https://mobonlinequizgame-ef1ca.firebaseio.com",
+    "project_id": "mobonlinequizgame-ef1ca",
+    "storage_bucket": "mobonlinequizgame-ef1ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791255479979:android:e921aedeb2cbd6258d69ee",
+        "android_client_info": {
+          "package_name": "com.example.mobfinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791255479979-6q98ltctgt0v5ej5lcsuh30tkck1j80h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobfinalproject",
+            "certificate_hash": "a077e394957230b703e2f38739849ed504371afc"
+          }
+        },
+        {
+          "client_id": "791255479979-vvtur4tc1ik1bg3en2s0hec7b7rluufn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMo6BBMMt0NaB59s9UAKH271MorGVGrPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791255479979-vvtur4tc1ik1bg3en2s0hec7b7rluufn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
