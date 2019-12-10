@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login(editExistUsername.getText().toString(), editPassword.getText().toString());
+
+                login(editExistUsername.getText().toString(), editExistPassword.getText().toString());
             }
         });
     }
@@ -67,7 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     if (!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
                         if (login.getPassword().equals(password)){
-                            Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                            //pasok ka na
+//                            Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                            Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
+                            startActivity(homeActivity);
+                            finish();
                         } else {
                             Toast.makeText(MainActivity.this, "Wrong login credentials. Please try again.", Toast.LENGTH_SHORT).show();
                         }
