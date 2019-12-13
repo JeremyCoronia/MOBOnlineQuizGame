@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity"
+    android:background="@drawable/altgamebg">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_centerInParent="true"
+        app:cardElevation="4dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff05a"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="PLAY"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            />
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.mobfinalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class CategoryFragment extends Fragment {
     RecyclerView listCategory;
     RecyclerView.LayoutManager layoutManager;
 
+    //firebase component
     FirebaseRecyclerAdapter<Category, CategoryViewHolder> adapter;
     FirebaseDatabase categoryDatabase;
     DatabaseReference categories;
@@ -69,16 +71,22 @@ public class CategoryFragment extends Fragment {
                 categories
         ) {
             @Override
-            protected void populateViewHolder(CategoryViewHolder categoryViewHolder, final Category category, int i) {
+            protected void populateViewHolder(CategoryViewHolder categoryViewHolder, final Category category, int position) {
+                //load names and images to recycler views
                 categoryViewHolder.categName.setText(category.getName());
                 Picasso.with(getActivity())
                         .load(category.getImage())
                         .into(categoryViewHolder.categImage);
 
+                //expected result: click on any category, take you to the Start Activity page to "PLAY"
                 categoryViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void oncClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(),String.format("%s|%s", adapter.getRef(position).getKey(), category.getName()) ,Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(),String.format("%s|%s", adapter.getRef(position).getKey(), category.getName()) ,Toast.LENGTH_SHORT).show();
+                        //start intent to take to Start Activity
+                        Intent startGame = new Intent(getActivity(), StartActivity.class);
+                        Common.categoryID = adapter.getRef(position).getKey();
+                        startActivity(startGame);
                     }
                 });
             }

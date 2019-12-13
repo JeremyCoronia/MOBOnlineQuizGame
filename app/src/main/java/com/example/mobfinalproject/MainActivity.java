@@ -68,12 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.child(username).exists()){
                     if (!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
+
                         if (login.getPassword().equals(password)){
                             //pasok ka na
 //                            Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+
                             Intent homeActivity = new Intent(MainActivity.this, HomeActivity.class);
+                            Common.currentUser = login;
                             startActivity(homeActivity);
                             finish();
+
                         } else {
                             Toast.makeText(MainActivity.this, "Wrong login credentials. Please try again.", Toast.LENGTH_SHORT).show();
                         }
