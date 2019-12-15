@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class PlayingActivity extends AppCompatActivity implements View.OnClickListener {
 
     final static long INTERVAL = 1000; //1 second
-    final static long TIMEOUT = 7000; // 7 seconds
+    final static long TIMEOUT = 10000; // 10 seconds
     final static int TOTALQUESTION = 10; //constant, always 10 questions
 
     CountDownTimer timer;
@@ -76,6 +76,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
             if (clickedButton.getText().toString().equals(Common.questionList.get(index).getCorrectAnswer())){
                 score += 10;
                 correctAnswer++;
+                txtTotalQuestion.setText(String.format("%d/%d", thisQuestion++, TOTALQUESTION));
                 showQuestion(++index);
 
             } else { //mali sagot na pinili
