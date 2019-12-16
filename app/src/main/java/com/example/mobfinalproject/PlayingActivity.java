@@ -3,6 +3,7 @@ package com.example.mobfinalproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Collections;
 
 /* NOTES:
     * flow is as follows:
@@ -26,6 +29,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
     final static long INTERVAL = 1000; //1 second
     final static long TIMEOUT = 10000; // 10 seconds
     final static int TOTALQUESTION = 10; //constant, always 10 questions
+
 
     CountDownTimer timer;
     int progressValue = 0;
@@ -97,6 +101,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void showQuestion(int i) {
         if (i < TOTALQUESTION){ //may tanong pa
+
             thisQuestion++;
             txtTotalQuestion.setText(String.format("%d / %d", thisQuestion, TOTALQUESTION));
             progressBar.setProgress(0);

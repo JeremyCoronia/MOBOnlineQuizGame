@@ -78,6 +78,6 @@ public class StartActivity extends AppCompatActivity {
         });
 
         //randomize the list
-        Collections.shuffle(Common.questionList, new Random());
+        Collections.shuffle(Common.questionList);
     }
 }
