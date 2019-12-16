@@ -22,17 +22,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
-        android:text="asdasda"
-        android:textSize="20dp"
+        android:text="text questions here"
+        android:textSize="28dp"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:gravity="center"
         />
 
     <RelativeLayout
         android:layout_alignParentBottom="true"
-        android:layout_margin="30dp"
+        android:layout_margin="20dp"
         android:padding="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -73,7 +75,8 @@
 
             <ProgressBar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:progressTint="#fff05a"
                 android:id="@+id/progressBar"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_marginLeft="8dp"

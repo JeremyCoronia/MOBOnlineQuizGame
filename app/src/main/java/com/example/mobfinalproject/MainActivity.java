@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editExistPassword.setText("");
+                editExistUsername.setText("");
                 showRegisterDialog();
             }
         });
@@ -55,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 login(editExistUsername.getText().toString(), editExistPassword.getText().toString());
             }
         });
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Missing login credentials. Please try again.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    editExistPassword.setText("");
+                    editExistUsername.setText("");
                     Toast.makeText(MainActivity.this, "User does not exist in our records. Please try again!", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -7,12 +7,51 @@
     tools:context=".HomeActivity"
     android:background="@drawable/altgamebg">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="18dp"
+        android:id="@+id/btnPack">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="175dp"
+            android:layout_height="50dp"
+            android:src="@drawable/name"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_border"
+                    android:id="@+id/btnLogout"
+                    android:text="Log out"
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#fff"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <FrameLayout
         android:id="@+id/frameLayout"
         android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
+        android:layout_below="@+id/btnPack"
         />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 public class Common {
-    public static String categoryID; //1 - 12, based on which category is clicked
+    public static String categoryID, categoryName; //1 - 12, based on which category is clicked
     public static User currentUser; //the logged in user
     public static List<Question> questionList = new ArrayList<>(); //the list of questions corresponding to category
 }

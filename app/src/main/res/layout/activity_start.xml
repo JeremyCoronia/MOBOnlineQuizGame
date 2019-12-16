@@ -22,7 +22,8 @@
         app:cardElevation="4dp"
         android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/playpack">
 
         <Button
             android:id="@+id/btnPlay"
@@ -36,9 +37,20 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             />
 
-
-
-
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff05a"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="BACK"
+        android:textSize="20dp"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_below="@id/playpack"
+        />
 
 </RelativeLayout>

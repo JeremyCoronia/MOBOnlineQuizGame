@@ -15,10 +15,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Collections;
+import java.util.Random;
 
 public class StartActivity extends AppCompatActivity {
 
-    Button btnPlay;
+    Button btnPlay, btnBack;
 
     //firebase component
     FirebaseDatabase questionsDatabase;
@@ -30,6 +31,7 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         btnPlay = (Button) findViewById(R.id.btnPlay);
+        btnBack = (Button) findViewById(R.id.btnBack);
 
         questionsDatabase = FirebaseDatabase.getInstance();
         questions = questionsDatabase.getReference("Questions");
@@ -41,6 +43,13 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(StartActivity.this, PlayingActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -69,6 +78,6 @@ public class StartActivity extends AppCompatActivity {
         });
 
         //randomize the list
-        Collections.shuffle(Common.questionList);
+        Collections.shuffle(Common.questionList, new Random());
     }
 }

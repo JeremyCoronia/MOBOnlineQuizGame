@@ -76,7 +76,6 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
             if (clickedButton.getText().toString().equals(Common.questionList.get(index).getCorrectAnswer())){
                 score += 10;
                 correctAnswer++;
-                txtTotalQuestion.setText(String.format("%d/%d", thisQuestion++, TOTALQUESTION));
                 showQuestion(++index);
 
             } else { //mali sagot na pinili
@@ -99,7 +98,7 @@ public class PlayingActivity extends AppCompatActivity implements View.OnClickLi
     private void showQuestion(int i) {
         if (i < TOTALQUESTION){ //may tanong pa
             thisQuestion++;
-            txtQuestion.setText(String.format("%d / %d", thisQuestion, TOTALQUESTION));
+            txtTotalQuestion.setText(String.format("%d / %d", thisQuestion, TOTALQUESTION));
             progressBar.setProgress(0);
             progressValue = 0;
 

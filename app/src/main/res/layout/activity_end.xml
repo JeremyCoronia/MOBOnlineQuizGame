@@ -25,10 +25,21 @@
         android:padding="20dp">
 
         <LinearLayout
+            android:layout_marginTop="50dp"
             android:id="@+id/btnGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtGreet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GREET"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:textSize="30sp"
+                android:textColor="#fff"/>
 
             <TextView
                 android:id="@+id/txtScore"
@@ -53,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/progressFinished"
                 android:layout_marginLeft="8dp"
+                android:progressTint="#fff05a"
                 android:layout_marginRight="8dp"/>
 
             <Button

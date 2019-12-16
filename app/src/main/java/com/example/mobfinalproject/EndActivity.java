@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class EndActivity extends AppCompatActivity {
 
     Button btnTryAgain;
-    TextView txtScore, txtQuestions;
+    TextView txtScore, txtQuestions, txtGreet;
     ProgressBar progressFinished;
 
     //firebase component
@@ -34,6 +34,7 @@ public class EndActivity extends AppCompatActivity {
         btnTryAgain = (Button) findViewById(R.id.btnTryAgain);
         txtScore = (TextView) findViewById(R.id.txtScore);
         txtQuestions = (TextView) findViewById(R.id.txtQuestions);
+        txtGreet = (TextView) findViewById(R.id.txtGreet);
         progressFinished = (ProgressBar) findViewById(R.id.progressFinished);
 
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,12 @@ public class EndActivity extends AppCompatActivity {
             int totQuestion = data.getInt("TOTAL");
             int correctAnswers = data.getInt("CORRECT");
 
+            if (correctAnswers < 6){
+                txtGreet.setText("Aww, that's a shame. Try again next time!");
+            } else {
+                txtGreet.setText("Congratulations! You can brag about your trivia knowledge to your friends now!");
+            }
+
             txtScore.setText(String.format("SCORE: %d", score));
             txtQuestions.setText(String.format("Correct Answers: %d / %d", correctAnswers, totQuestion));
 
@@ -63,7 +70,8 @@ public class EndActivity extends AppCompatActivity {
                                                             Common.categoryID))
                     .setValue(new Score(String.format("%s_%s", Common.currentUser.getUsername(), Common.categoryID),
                                         Common.currentUser.getUsername(),
-                                        String.valueOf(score)));
+                                        String.valueOf(score),
+                                        Common.categoryID, Common.categoryName));
         }
     }
 }
